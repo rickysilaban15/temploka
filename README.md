@@ -58,59 +58,51 @@ Proyek dibangun di atas:
 
 ---
 
-## 🚀 Instalasi & Setup
 
-### **1. Clone Repository**
-```bash
-git clone https://github.com/rickysilaban15/temploka.git
-cd temploka
+
 2. Install Dependencies Backend
-bash
-Salin kode
 composer install
+
 3. Copy File Environment
-bash
-Salin kode
 cp .env.example .env
+
 4. Generate App Key
-bash
-Salin kode
 php artisan key:generate
+
 5. Setup Database
+
 Edit file .env:
 
-ini
-Salin kode
 DB_DATABASE=temploka
 DB_USERNAME=root
 DB_PASSWORD=yourpassword
+
+
 Lalu jalankan migrasi:
 
-bash
-Salin kode
 php artisan migrate
+
 6. Install Dependencies Frontend
-bash
-Salin kode
 npm install
+
 7. Build Assets
-bash
-Salin kode
 npm run build
+
 8. (Opsional) Jalankan Mode Pengembangan
+
 Menjalankan Laravel + Vite + Queue + Logging bersamaan:
 
-bash
-Salin kode
 composer dev
+
+
 Atau manual:
 
-bash
-Salin kode
 php artisan serve
 npm run dev
+
 📦 Script Penting
 Composer Scripts
+
 composer setup → instalasi cepat (backend + frontend)
 
 composer dev → menjalankan development env lengkap
@@ -118,12 +110,14 @@ composer dev → menjalankan development env lengkap
 composer test → menjalankan unit tests
 
 NPM Scripts
+
 npm run dev → Vite dev server
 
 npm run build → compile assets
 
 🛣️ Routing (Ringkasan)
 🔹 Public Routes
+
 Halaman Home
 
 List template
@@ -139,14 +133,17 @@ Dokumentasi
 Support
 
 🔹 Auth Routes
+
 Laravel Breeze
 
 Login / Register
 
 🔹 Onboarding
+
 3 langkah onboarding sebelum masuk dashboard.
 
 🔹 Dashboard (User)
+
 Templates
 
 Modules
@@ -160,6 +157,7 @@ Settings
 Profile
 
 🔹 Editor
+
 Edit template
 
 Save / Publish / Reset / Duplicate
@@ -169,6 +167,7 @@ Upload image
 View published
 
 🔹 Payment
+
 Checkout
 
 Upload bukti pembayaran
@@ -176,12 +175,14 @@ Upload bukti pembayaran
 Success page
 
 🔹 Admin
+
 CRUD Template
 
 Upload template ZIP
 
 🧱 Teknologi & Dependency
 composer.json (ringkasan)
+
 Laravel 12
 
 Laravel Breeze
@@ -195,6 +196,7 @@ Sail
 Collision (error handler)
 
 package.json (ringkasan)
+
 TailwindCSS
 
 Vite
@@ -206,6 +208,7 @@ Chart.js
 Axios
 
 🗺️ Roadmap (Future Features)
+
 Integrasi marketplace: Shopee, Tokopedia, Lazada
 
 Drag & drop builder full visual
@@ -217,11 +220,15 @@ REST API untuk modul custom
 Subscription recurring
 
 🧑‍💻 Kontribusi
+
 Pull request dipersilakan!
 Ikuti format PSR-12 & Laravel Pint.
 
 📝 Lisensi
+
 MIT License.
 
 ❤️ Terima Kasih
+
 Proyek ini dibuat untuk memberikan kemudahan bagi siapa saja yang ingin membuat sistem bisnis modern tanpa coding — dengan cara seintuitif Canva dan se-powerful Odoo.
+   
