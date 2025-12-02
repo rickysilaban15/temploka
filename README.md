@@ -1,96 +1,103 @@
 # 🌐 Temploka  
-Platform ERP + CRM Builder Berbasis Template  
-_Didesain seperti gabungan Odoo + Canva._
+_SaaS ERP + CRM Builder Berbasis Template — Gabungan konsep Odoo + Canva._
 
-Temploka adalah platform untuk membuat sistem bisnis (ERP, CRM, Integrasi Marketplace, dan modul bisnis lainnya) dengan **template siap pakai**. Pengguna dapat mengedit, menyesuaikan, dan mempublikasi modul bisnis mereka dengan mudah — tanpa coding.
-
-Konsep utamanya:
-- Seperti **Odoo**, namun **tanpa perlu membangun modul dari nol**  
-- Seperti **Canva**, pengguna bisa **edit dashboard, modul, workflow**, dan **bayar hanya ketika fitur premium dipakai**
+Temploka adalah platform yang memungkinkan pengguna membuat sistem bisnis (ERP, CRM, integrasi marketplace, manajemen produk, dll.) menggunakan **template siap pakai**.  
+Tidak seperti Odoo yang harus membangun modul dari nol, Temploka menawarkan **template editor visual** seperti Canva — sehingga pengguna dapat mengedit sistem mereka dengan bebas, lalu mempublikasikannya.
 
 ---
 
 ## ✨ Fitur Utama
 
-### 🔹 **Template-based ERP & CRM**
-Pengguna dapat memilih template sistem bisnis siap pakai, mengeditnya, lalu menggunakan atau mempublikasikannya.
+### 🎨 Template-Based ERP Builder
+- Pilih template sistem bisnis
+- Edit tampilan, modul, workflow
+- Simpan, publish, dan preview online
 
-### 🔹 **Modular System (ERP / CRM / Integrasi Marketplace / Produk)**
-Pengguna bebas mengaktifkan modul yang mereka inginkan:
-- Manajemen Produk  
+### 🧩 Modular System
+Pengguna dapat mengaktifkan modul:
 - CRM  
 - ERP  
-- Integrasi marketplace (Tokopedia, Shopee — planned)  
-- Workshop & editor builder  
+- Integrasi Marketplace  
+- Manajemen Produk  
+- Workshop Builder  
+- Module Manager  
 
-### 🔹 **Freemium Model**
-- 1 modul → gratis  
-- Paket lengkap → bayar  
-- Sistem pembayaran sudah built-in
+### 💸 Freemium Model
+- 1 modul gratis  
+- Semua modul / full fitur berbayar  
+- Sistem checkout + upload bukti sudah tersedia
 
-### 🔹 **Powerful Editor**
-Mirip Canva, tetapi untuk dashboard bisnis:
-- Drag & drop  
-- Custom template  
-- Publish template  
-- Preview publik  
-
-### 🔹 **Admin Panel (Halaman Terpisah)**
-Admin dapat:
-- Mengelola template global  
+### 🧑‍💻 Admin Panel Khusus
+Admin (pemilik Temploka) dapat:
 - Upload template via ZIP  
+- Kelola modul global  
 - Kelola user  
 - Kelola pembayaran  
 
----
-
-## 📁 Struktur Proyek
-
-Proyek dibangun di atas:
-
-- **Laravel 12 (PHP 8.2+)**
-- **Blade + Alpine.js**
-- **TailwindCSS**
-- **Vite Build System**
-- **Chart.js** untuk grafik
-- **Axios** untuk API request
-- Sistem editor custom
+### ⚡ Power Features
+- Editor drag & drop (custom builder)
+- Public template preview
+- User onboarding (3 step)
+- Publish template ke sub-URL
 
 ---
 
+## 📁 Teknologi Utama
 
+**Backend**
+- Laravel 12  
+- PHP 8.2+  
+- Blade Templates  
+- Middleware Custom (CheckTemplateAccess, auth, admin)
 
-2. Install Dependencies Backend
+**Frontend**
+- TailwindCSS  
+- Alpine.js  
+- Axios  
+- Chart.js  
+- Vite Bundler
+
+**Tools**
+- Laravel Breeze (auth)
+- Laravel Pint (formatter)
+- PHPUnit
+
+---
+
+📦 Instalasi & Setup
+
+1️⃣ Clone Repository
+```bash
+git clone https://github.com/rickysilaban15/temploka.git
+cd temploka
+2️⃣ Install Backend Dependencies
 composer install
 
-3. Copy File Environment
+3️⃣ Copy & Setup Environment
 cp .env.example .env
 
-4. Generate App Key
-php artisan key:generate
 
-5. Setup Database
-
-Edit file .env:
+Edit .env:
 
 DB_DATABASE=temploka
 DB_USERNAME=root
 DB_PASSWORD=yourpassword
 
+4️⃣ Generate Key
+php artisan key:generate
 
-Lalu jalankan migrasi:
-
+5️⃣ Migrasi Database
 php artisan migrate
 
-6. Install Dependencies Frontend
+6️⃣ Install Frontend Dependencies
 npm install
 
-7. Build Assets
+7️⃣ Build Frontend
 npm run build
 
-8. (Opsional) Jalankan Mode Pengembangan
+8️⃣ Jalankan Mode Development
 
-Menjalankan Laravel + Vite + Queue + Logging bersamaan:
+Mode development lengkap (Laravel + Queue + Logs + Vite):
 
 composer dev
 
@@ -100,49 +107,52 @@ Atau manual:
 php artisan serve
 npm run dev
 
-📦 Script Penting
-Composer Scripts
 
-composer setup → instalasi cepat (backend + frontend)
 
-composer dev → menjalankan development env lengkap
 
-composer test → menjalankan unit tests
+📜 Script Penting (Composer & NPM)
+Composer
 
-NPM Scripts
+composer setup → instalasi otomatis (backend + frontend)
 
-npm run dev → Vite dev server
+composer dev → environment dev lengkap
+
+composer test → menjalankan unit test
+
+NPM
+
+npm run dev → Vite development
 
 npm run build → compile assets
 
-🛣️ Routing (Ringkasan)
-🔹 Public Routes
+🛣️ Struktur Routing
+🔓 Public
 
-Halaman Home
+/ Home
 
-List template
+/templates
 
-Detail template
+/categories
 
-Kategori
+/harga
 
-Pricing
+/pusat-bantuan
 
-Dokumentasi
+/dokumentasi
 
-Support
+/tutorial
 
-🔹 Auth Routes
+🔐 Auth
 
-Laravel Breeze
+Login / Register via Laravel Breeze
 
-Login / Register
+🧭 Onboarding
 
-🔹 Onboarding
+Pengguna baru melalui 3 step onboarding wajib.
 
-3 langkah onboarding sebelum masuk dashboard.
+📊 Dashboard (Customer)
 
-🔹 Dashboard (User)
+Dashboard overview
 
 Templates
 
@@ -150,85 +160,83 @@ Modules
 
 Integrations
 
-Workshop (Builder)
+Workshop
 
 Settings
 
 Profile
 
-🔹 Editor
+📝 Editor
 
 Edit template
 
-Save / Publish / Reset / Duplicate
+Save
+
+Publish
+
+Reset
+
+Duplicate
 
 Upload image
 
-View published
+Get content API
 
-🔹 Payment
+View published template
+
+🧾 Payment
 
 Checkout
 
-Upload bukti pembayaran
+Process Payment
 
-Success page
+Upload bukti
 
-🔹 Admin
+Payment success
+
+🛠 Admin
 
 CRUD Template
 
 Upload template ZIP
 
-🧱 Teknologi & Dependency
-composer.json (ringkasan)
+🧱 Dependensi Utama
+package.json
+- TailwindCSS
+- Vite
+- Alpine.js
+- Chart.js
+- Axios
 
-Laravel 12
+composer.json
+- Laravel 12
+- Laravel Breeze
+- Laravel Pint
+- PHPUnit
+- Sail
 
-Laravel Breeze
+🗺 Roadmap Pengembangan
 
-Pint (formatter)
+Integrasi marketplace: Tokopedia, Shopee, Lazada
 
-PHPUnit
+Builder drag & drop full visual
 
-Sail
+Export project ke ZIP
 
-Collision (error handler)
+API akses modul custom
 
-package.json (ringkasan)
+Sistem subscription otomatis
 
-TailwindCSS
-
-Vite
-
-Alpine.js
-
-Chart.js
-
-Axios
-
-🗺️ Roadmap (Future Features)
-
-Integrasi marketplace: Shopee, Tokopedia, Lazada
-
-Drag & drop builder full visual
-
-Export project sebagai ZIP
-
-REST API untuk modul custom
-
-Subscription recurring
-
-🧑‍💻 Kontribusi
+🤝 Kontribusi
 
 Pull request dipersilakan!
-Ikuti format PSR-12 & Laravel Pint.
+Gunakan format PSR-12 + Laravel Pint.
 
-📝 Lisensi
+📄 Lisensi
 
 MIT License.
 
-❤️ Terima Kasih
+❤️ Tentang Temploka
 
-Proyek ini dibuat untuk memberikan kemudahan bagi siapa saja yang ingin membuat sistem bisnis modern tanpa coding — dengan cara seintuitif Canva dan se-powerful Odoo.
-   
+Temploka dibangun untuk mempermudah UMKM, creator, dan pelaku bisnis membuat sistem ERP modern tanpa harus memiliki pengetahuan teknis.
+Cepat, fleksibel, dan dapat dikustomisasi — seperti Canva, namun untuk sistem bisnis.
