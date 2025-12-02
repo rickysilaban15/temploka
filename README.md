@@ -1,59 +1,227 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌐 Temploka  
+Platform ERP + CRM Builder Berbasis Template  
+_Didesain seperti gabungan Odoo + Canva._
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Temploka adalah platform untuk membuat sistem bisnis (ERP, CRM, Integrasi Marketplace, dan modul bisnis lainnya) dengan **template siap pakai**. Pengguna dapat mengedit, menyesuaikan, dan mempublikasi modul bisnis mereka dengan mudah — tanpa coding.
 
-## About Laravel
+Konsep utamanya:
+- Seperti **Odoo**, namun **tanpa perlu membangun modul dari nol**  
+- Seperti **Canva**, pengguna bisa **edit dashboard, modul, workflow**, dan **bayar hanya ketika fitur premium dipakai**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🔹 **Template-based ERP & CRM**
+Pengguna dapat memilih template sistem bisnis siap pakai, mengeditnya, lalu menggunakan atau mempublikasikannya.
 
-## Learning Laravel
+### 🔹 **Modular System (ERP / CRM / Integrasi Marketplace / Produk)**
+Pengguna bebas mengaktifkan modul yang mereka inginkan:
+- Manajemen Produk  
+- CRM  
+- ERP  
+- Integrasi marketplace (Tokopedia, Shopee — planned)  
+- Workshop & editor builder  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 🔹 **Freemium Model**
+- 1 modul → gratis  
+- Paket lengkap → bayar  
+- Sistem pembayaran sudah built-in
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔹 **Powerful Editor**
+Mirip Canva, tetapi untuk dashboard bisnis:
+- Drag & drop  
+- Custom template  
+- Publish template  
+- Preview publik  
 
-## Laravel Sponsors
+### 🔹 **Admin Panel (Halaman Terpisah)**
+Admin dapat:
+- Mengelola template global  
+- Upload template via ZIP  
+- Kelola user  
+- Kelola pembayaran  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 📁 Struktur Proyek
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Proyek dibangun di atas:
 
-## Contributing
+- **Laravel 12 (PHP 8.2+)**
+- **Blade + Alpine.js**
+- **TailwindCSS**
+- **Vite Build System**
+- **Chart.js** untuk grafik
+- **Axios** untuk API request
+- Sistem editor custom
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🚀 Instalasi & Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### **1. Clone Repository**
+```bash
+git clone https://github.com/rickysilaban15/temploka.git
+cd temploka
+2. Install Dependencies Backend
+bash
+Salin kode
+composer install
+3. Copy File Environment
+bash
+Salin kode
+cp .env.example .env
+4. Generate App Key
+bash
+Salin kode
+php artisan key:generate
+5. Setup Database
+Edit file .env:
 
-## Security Vulnerabilities
+ini
+Salin kode
+DB_DATABASE=temploka
+DB_USERNAME=root
+DB_PASSWORD=yourpassword
+Lalu jalankan migrasi:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+bash
+Salin kode
+php artisan migrate
+6. Install Dependencies Frontend
+bash
+Salin kode
+npm install
+7. Build Assets
+bash
+Salin kode
+npm run build
+8. (Opsional) Jalankan Mode Pengembangan
+Menjalankan Laravel + Vite + Queue + Logging bersamaan:
 
-## License
+bash
+Salin kode
+composer dev
+Atau manual:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+bash
+Salin kode
+php artisan serve
+npm run dev
+📦 Script Penting
+Composer Scripts
+composer setup → instalasi cepat (backend + frontend)
+
+composer dev → menjalankan development env lengkap
+
+composer test → menjalankan unit tests
+
+NPM Scripts
+npm run dev → Vite dev server
+
+npm run build → compile assets
+
+🛣️ Routing (Ringkasan)
+🔹 Public Routes
+Halaman Home
+
+List template
+
+Detail template
+
+Kategori
+
+Pricing
+
+Dokumentasi
+
+Support
+
+🔹 Auth Routes
+Laravel Breeze
+
+Login / Register
+
+🔹 Onboarding
+3 langkah onboarding sebelum masuk dashboard.
+
+🔹 Dashboard (User)
+Templates
+
+Modules
+
+Integrations
+
+Workshop (Builder)
+
+Settings
+
+Profile
+
+🔹 Editor
+Edit template
+
+Save / Publish / Reset / Duplicate
+
+Upload image
+
+View published
+
+🔹 Payment
+Checkout
+
+Upload bukti pembayaran
+
+Success page
+
+🔹 Admin
+CRUD Template
+
+Upload template ZIP
+
+🧱 Teknologi & Dependency
+composer.json (ringkasan)
+Laravel 12
+
+Laravel Breeze
+
+Pint (formatter)
+
+PHPUnit
+
+Sail
+
+Collision (error handler)
+
+package.json (ringkasan)
+TailwindCSS
+
+Vite
+
+Alpine.js
+
+Chart.js
+
+Axios
+
+🗺️ Roadmap (Future Features)
+Integrasi marketplace: Shopee, Tokopedia, Lazada
+
+Drag & drop builder full visual
+
+Export project sebagai ZIP
+
+REST API untuk modul custom
+
+Subscription recurring
+
+🧑‍💻 Kontribusi
+Pull request dipersilakan!
+Ikuti format PSR-12 & Laravel Pint.
+
+📝 Lisensi
+MIT License.
+
+❤️ Terima Kasih
+Proyek ini dibuat untuk memberikan kemudahan bagi siapa saja yang ingin membuat sistem bisnis modern tanpa coding — dengan cara seintuitif Canva dan se-powerful Odoo.
